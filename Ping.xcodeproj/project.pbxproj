@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4EA4B551E254FA095D2C5AE /* Pods_Ping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090493DA1B41492ECAE8CC3E /* Pods_Ping.framework */; };
+		F48BB5DA23209214006DA0EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F48BB5D923209214006DA0EF /* GoogleService-Info.plist */; };
 		F499674A23207C6F0004104D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499674923207C6F0004104D /* AppDelegate.swift */; };
 		F499674C23207C6F0004104D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499674B23207C6F0004104D /* ViewController.swift */; };
 		F499674F23207C6F0004104D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F499674D23207C6F0004104D /* Main.storyboard */; };
@@ -15,6 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090493DA1B41492ECAE8CC3E /* Pods_Ping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17AF762B0160FAB5A70167A2 /* Pods-Ping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ping.release.xcconfig"; path = "Target Support Files/Pods-Ping/Pods-Ping.release.xcconfig"; sourceTree = "<group>"; };
+		7EA16B7E45F1907DD3608B8E /* Pods-Ping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ping.debug.xcconfig"; path = "Target Support Files/Pods-Ping/Pods-Ping.debug.xcconfig"; sourceTree = "<group>"; };
+		F48BB5D923209214006DA0EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F499674623207C6F0004104D /* Ping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F499674923207C6F0004104D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F499674B23207C6F0004104D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EA4B551E254FA095D2C5AE /* Pods_Ping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50FE44EC0337DAC90854635F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				090493DA1B41492ECAE8CC3E /* Pods_Ping.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8690210C5C12DD128D55F0CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EA16B7E45F1907DD3608B8E /* Pods-Ping.debug.xcconfig */,
+				17AF762B0160FAB5A70167A2 /* Pods-Ping.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F499673D23207C6F0004104D = {
 			isa = PBXGroup;
 			children = (
 				F499674823207C6F0004104D /* Ping */,
 				F499674723207C6F0004104D /* Products */,
+				8690210C5C12DD128D55F0CA /* Pods */,
+				50FE44EC0337DAC90854635F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				F499675023207C720004104D /* Assets.xcassets */,
 				F499675223207C720004104D /* LaunchScreen.storyboard */,
 				F499675523207C720004104D /* Info.plist */,
+				F48BB5D923209214006DA0EF /* GoogleService-Info.plist */,
 			);
 			path = Ping;
 			sourceTree = "<group>";
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F499675823207C720004104D /* Build configuration list for PBXNativeTarget "Ping" */;
 			buildPhases = (
+				92EF4638E55D7291E5264B14 /* [CP] Check Pods Manifest.lock */,
 				F499674223207C6F0004104D /* Sources */,
 				F499674323207C6F0004104D /* Frameworks */,
 				F499674423207C6F0004104D /* Resources */,
+				840552D61E005B0DE18EC027 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,10 +154,53 @@
 				F499675423207C720004104D /* LaunchScreen.storyboard in Resources */,
 				F499675123207C720004104D /* Assets.xcassets in Resources */,
 				F499674F23207C6F0004104D /* Main.storyboard in Resources */,
+				F48BB5DA23209214006DA0EF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		840552D61E005B0DE18EC027 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ping/Pods-Ping-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ping/Pods-Ping-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ping/Pods-Ping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92EF4638E55D7291E5264B14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ping-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F499674223207C6F0004104D /* Sources */ = {
@@ -280,6 +352,7 @@
 		};
 		F499675923207C720004104D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EA16B7E45F1907DD3608B8E /* Pods-Ping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +371,7 @@
 		};
 		F499675A23207C720004104D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17AF762B0160FAB5A70167A2 /* Pods-Ping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
