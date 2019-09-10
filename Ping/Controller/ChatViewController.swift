@@ -19,9 +19,10 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messageHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var sendMessageButton: UIButton!
     // MARK: Properties
     
-    let messageDatabase: [Message] = [Message(messageBody: "Message1", sender: "A"), Message(messageBody: "Message2", sender: "B"), Message(messageBody: "Message3", sender: "C")]
+    var messageDatabase:[Message] = []
     
     // MARK: Lifecycle
     
@@ -36,6 +37,7 @@ class ChatViewController: UIViewController {
         messageTableView.delegate = self
         messageTableView.dataSource = self
         messageTextField.delegate = self
+        retreivemessages()
     }
    
     
@@ -48,9 +50,22 @@ class ChatViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction func didPressSend(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5) {
-            self.messageHeightConstraint.constant = 50
-            self.view.layoutIfNeeded()
+        messageTextField.endEditing(true)
+        messageTextField.isEnabled = false
+        sendMessageButton.isEnabled = false
+        
+        let messagesDB = Database.database().reference().child("Messages")
+        let messageDictionary = ["Sender": Auth.auth().currentUser?.email,
+                                 "MessageBody": messageTextField.text!]
+        messagesDB.childByAutoId().setValue(messageDictionary) { (error, reference) in
+            if error != nil {
+                print(error!)
+            } else {
+                print("Message Saved")
+                self.sendMessageButton.isEnabled = true
+                self.messageTextField.isEnabled = true
+                self.messageTextField.text = ""
+            }
         }
     }
     
@@ -64,6 +79,20 @@ class ChatViewController: UIViewController {
     }
     
     // MARK: Functions
+    
+    func retreivemessages() {
+        let messagesDB = Database.database().reference().child("Messages")
+        messagesDB.observe(.childAdded) { (snapshot) in
+            let snapshotValue = snapshot.value as! [String: String]
+            let messageBody = snapshotValue["MessageBody"]!
+            let sender = snapshotValue["Sender"]!
+            let message = Message(messageBody: messageBody, sender: sender)
+            self.messageDatabase.append(message)
+            DispatchQueue.main.async {
+                self.messageTableView.reloadData()
+            }
+        }
+    }
     
     @objc func tableViewTapped() {
         messageTextField.endEditing(true)

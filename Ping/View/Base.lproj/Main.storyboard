@@ -227,6 +227,7 @@
                         <outlet property="messageHeightConstraint" destination="BHE-nX-a3o" id="Grw-S2-Nfb"/>
                         <outlet property="messageTableView" destination="m5H-33-fOA" id="POb-Bd-HhN"/>
                         <outlet property="messageTextField" destination="6Lo-1o-izB" id="UsL-sV-zB2"/>
+                        <outlet property="sendMessageButton" destination="lN3-XQ-cZJ" id="sjo-0e-pde"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YL3-gt-bJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
