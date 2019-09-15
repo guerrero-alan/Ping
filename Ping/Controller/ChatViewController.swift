@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ChameleonFramework
 
 // MARK: ChatViewController
 
@@ -116,8 +117,14 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = messageTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
         cell.messageBodyLabel.text = messageDatabase[indexPath.row].messageBody
         cell.senderLabel.text = messageDatabase[indexPath.row].sender
-        //cell.auteurImageView.layer.cornerRadius = cell.auteurImageView.frame.size.width / 2
-        cell.messageBodyLabel.layer.cornerRadius = cell.messageBodyLabel.frame.size.width / 2
+        
+        if cell.senderLabel.text == Auth.auth().currentUser?.email {
+            cell.messageBackground.backgroundColor = UIColor.flatMint()
+            cell.senderLabel.textColor = UIColor.flatSkyBlue()
+        } else {
+            cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
+             cell.senderLabel.textColor = UIColor.flatMint()
+        }
         return cell
     }
     
