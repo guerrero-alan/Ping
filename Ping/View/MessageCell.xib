@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="73" id="Y6g-6j-den" customClass="MessageTableViewCell" customModule="Ping" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y6g-6j-den" id="QG0-RD-A9i">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jAt-VL-mqt">
+                        <rect key="frame" x="10" y="10" width="300" height="60.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjC-v7-zl4">
+                                <rect key="frame" x="8" y="19.5" width="284" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hx8-iG-BFG">
+                                <rect key="frame" x="8" y="5" width="284" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.03461833785" green="0.65046146370000002" blue="0.061060758870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="AjC-v7-zl4" secondAttribute="bottom" constant="20" id="0T5-rO-xoS"/>
+                            <constraint firstItem="AjC-v7-zl4" firstAttribute="top" secondItem="hx8-iG-BFG" secondAttribute="bottom" id="4F9-2X-eks"/>
+                            <constraint firstItem="AjC-v7-zl4" firstAttribute="leading" secondItem="jAt-VL-mqt" secondAttribute="leading" constant="8" id="FlK-cb-Jqc"/>
+                            <constraint firstItem="hx8-iG-BFG" firstAttribute="top" secondItem="jAt-VL-mqt" secondAttribute="top" constant="5" id="PSb-Vp-5eR"/>
+                            <constraint firstAttribute="trailing" secondItem="hx8-iG-BFG" secondAttribute="trailing" constant="8" id="ZaE-ed-MOR"/>
+                            <constraint firstItem="hx8-iG-BFG" firstAttribute="leading" secondItem="jAt-VL-mqt" secondAttribute="leading" constant="8" id="fOG-CJ-30F"/>
+                            <constraint firstAttribute="trailing" secondItem="AjC-v7-zl4" secondAttribute="trailing" constant="8" id="l7W-Xc-FjK"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jAt-VL-mqt" firstAttribute="top" secondItem="QG0-RD-A9i" secondAttribute="top" constant="10" id="Ixl-bf-Fqr"/>
+                    <constraint firstAttribute="bottom" secondItem="jAt-VL-mqt" secondAttribute="bottom" constant="10" id="Kh0-Uj-p5e"/>
+                    <constraint firstItem="jAt-VL-mqt" firstAttribute="leading" secondItem="QG0-RD-A9i" secondAttribute="leading" constant="10" id="Ngz-a8-CdO"/>
+                    <constraint firstAttribute="trailing" secondItem="jAt-VL-mqt" secondAttribute="trailing" constant="10" id="jWK-NR-YeZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="messageBackground" destination="jAt-VL-mqt" id="erL-YI-Ul5"/>
+                <outlet property="messageBodyLabel" destination="AjC-v7-zl4" id="toM-KV-qEP"/>
+                <outlet property="senderLabel" destination="hx8-iG-BFG" id="fkM-N4-FOt"/>
+            </connections>
+            <point key="canvasLocation" x="1.4492753623188408" y="-28.459821428571427"/>
+        </tableViewCell>
+    </objects>
+</document>

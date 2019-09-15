@@ -37,6 +37,10 @@ class ChatViewController: UIViewController {
         messageTableView.delegate = self
         messageTableView.dataSource = self
         messageTextField.delegate = self
+        
+        messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "messageCell")
+        
+        configureTableView()
         retreivemessages()
     }
    
@@ -109,10 +113,17 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = messageTableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
-        cell.textLabel?.text = messageDatabase[indexPath.row].messageBody
-        cell.detailTextLabel?.text = messageDatabase[indexPath.row].sender
+        let cell = messageTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
+        cell.messageBodyLabel.text = messageDatabase[indexPath.row].messageBody
+        cell.senderLabel.text = messageDatabase[indexPath.row].sender
+        //cell.auteurImageView.layer.cornerRadius = cell.auteurImageView.frame.size.width / 2
+        cell.messageBodyLabel.layer.cornerRadius = cell.messageBodyLabel.frame.size.width / 2
         return cell
+    }
+    
+    func configureTableView() {
+        messageTableView.rowHeight = UITableView.automaticDimension
+        messageTableView.estimatedRowHeight = 10.0
     }
 }
 

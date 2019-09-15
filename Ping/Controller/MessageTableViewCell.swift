@@ -9,7 +9,10 @@
 import UIKit
 
 class MessageTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var senderLabel: UILabel!
+    @IBOutlet weak var messageBodyLabel: UILabel!
+    @IBOutlet weak var messageBackground: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
